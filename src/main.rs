@@ -33,8 +33,10 @@ fn main() -> std::io::Result<()> {
         if event == Event::Key(KeyCode::Esc.into()) {
             break;
         } else {
-            if event == Event::Key(KeyCode::Char('q').into()) {
-                file.write(b"q");
+            for i in b' '..b'~' {
+                if event == Event::Key(KeyCode::Char(i as char).into()) {
+                    file.write(&[i]);
+                }
             }
         } 
     }
