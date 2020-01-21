@@ -1,3 +1,3 @@
 tasks:
-  - init: cargo build
-    command: gp open test.txt && cargo run test.txt
+  - init: cargo install --path .
+    command: gp open test.txt && rustedit test.txt
